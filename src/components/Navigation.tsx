@@ -21,8 +21,9 @@ export const Navigation = () => {
     { name: 'Contact', href: '#contact' }
   ];
 
-  const handleNavClick = (href: string, external?: boolean) => {
-    if (external && href.startsWith('http')) {
+  const handleNavClick = (href: string) => {
+    const external = href.startsWith('http');
+    if (external) {
       // Open external link in same tab
       window.location.href = href;
     } else if (href.startsWith('#')) {
@@ -53,7 +54,7 @@ export const Navigation = () => {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2 sm:space-x-3 cursor-pointer" onClick={() => navigate('/')}>
+          <div className="flex items-center space-x-2 sm:space-x-3 cursor-pointer" onClick={() => handleNavClick('#home')}>
             <img 
               src="/lovable-uploads/d8014c2c-0d0b-4866-974f-ace3b84333d0.png" 
               alt="E-CELL LNCTE Logo" 
@@ -67,7 +68,7 @@ export const Navigation = () => {
             {navItems.map((item) => (
               <button
                 key={item.name}
-                onClick={() => handleNavClick(item.href, item.external)}
+                onClick={() => handleNavClick(item.href)}
                 className="text-foreground hover:text-primary transition-colors duration-200 font-medium relative group"
               >
                 {item.name}
@@ -96,7 +97,7 @@ export const Navigation = () => {
               {navItems.map((item) => (
                 <button
                   key={item.name}
-                  onClick={() => handleNavClick(item.href, item.external)}
+                  onClick={() => handleNavClick(item.href)}
                   className="text-foreground hover:text-primary transition-all duration-300 font-medium text-left py-3 px-4 rounded-xl hover:bg-primary/10 active:bg-primary/20 w-full hover:scale-105"
                 >
                   {item.name}

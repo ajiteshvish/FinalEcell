@@ -53,7 +53,35 @@ export const OurInitiatives = () => {
           </p>
         </div>
 
-        
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {initiatives.map((item) => (
+            <Card key={item.id} className="group hover:shadow-xl transition-all duration-300 border border-border/50 bg-card/60 backdrop-blur-sm overflow-hidden">
+              <div className="h-40 w-full overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-6">
+                <div className="flex items-center space-x-3 mb-3">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full blur-sm opacity-40 group-hover:opacity-80 transition-opacity"></div>
+                    <div className="relative p-2 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 text-primary">
+                      {item.icon}
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-semibold text-foreground">
+                    {item.title}
+                  </h3>
+                </div>
+                <p className="text-muted-foreground leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            </Card>
+          ))}
+        </div>
       </div>
     </section>;
 };

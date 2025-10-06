@@ -6,7 +6,7 @@ export const About = () => {
           <div className="relative inline-block mb-8">
             <div className="absolute inset-0 bg-gradient-to-r from-primary/30 via-secondary/30 to-primary/30 blur-xl rounded-full animate-pulse"></div>
             <h2 className="relative heading-gradient">
-              WHAT IS E-CELL
+              WHAT IS E-CELL LNCTE
             </h2>
             <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
           </div>

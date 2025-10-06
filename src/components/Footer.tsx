@@ -2,9 +2,8 @@ import { Sparkles, Mail, Phone, MapPin, Linkedin, Twitter, Instagram, Github } f
 
 export const Footer = () => {
   const socialLinks = [
-    { icon: <Linkedin className="h-5 w-5" />, href: "#", name: "LinkedIn" },
-    { icon: <Twitter className="h-5 w-5" />, href: "#", name: "Twitter" },
-    { icon: <Instagram className="h-5 w-5" />, href: "#", name: "Instagram" }
+    { icon: <Linkedin className="h-5 w-5" />, href: "https://www.linkedin.com/company/104391726/admin/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3Blrjv8BZBROGDSxNG2bZbIA%3D%3D", name: "LinkedIn" },
+    { icon: <Instagram className="h-5 w-5" />, href: "https://www.instagram.com/ecell_lncte?igsh=ODh2NWFhY2Z5aXNq", name: "Instagram" }
   ];
 
 
@@ -47,17 +46,17 @@ export const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center justify-center lg:justify-start text-muted-foreground">
                 <Mail className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
-                <span className="text-sm">e-cell@lncte.ac.in</span>
+                <span className="text-sm">E-mail:- ecell_lncte@lnct.ac.in</span>
               </div>
               <div className="flex items-center justify-center lg:justify-start text-muted-foreground">
                 <Phone className="h-4 w-4 mr-3 text-primary flex-shrink-0" />
-                <span className="text-sm">+91 12345 67890</span>
+                <span className="text-sm">Phone:- Sarvesh Kumar: +91 76439 21187</span>
               </div>
               <div className="flex items-start justify-center lg:justify-start text-muted-foreground">
                 <MapPin className="h-4 w-4 mr-3 text-primary mt-1 flex-shrink-0" />
                 <span className="text-sm text-center lg:text-left">
-                  Lakshmi Narayan College of Technology,<br />
-                  Bhopal, Madhya Pradesh
+                  Lakshmi Narayan College of Technology Excellence, Raisen Road<br />
+                  Bhopal, Madhya Pradesh - 462022
                 </span>
               </div>
             </div>
