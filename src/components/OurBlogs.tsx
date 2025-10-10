@@ -1,5 +1,4 @@
 import { Card } from './ui/card';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel';
 import { Calendar, User, ArrowRight, Eye } from 'lucide-react';
 
 export const OurBlogs = () => {
@@ -84,11 +83,94 @@ export const OurBlogs = () => {
           </p>
         </div>
 
-        <div className="relative max-w-6xl mx-auto">
-          <Carousel className="w-full" opts={{ align: 'start', loop: true }}>
-            <CarouselContent>
-              {blogs.map((blog, index) => (
-                <CarouselItem key={blog.id} className="basis-full">
+        <div className="relative max-w-7xl mx-auto overflow-hidden">
+          <div className="flex animate-scroll space-x-6" style={{
+            animation: 'scroll 25s linear infinite',
+            width: 'calc(100% * 2)'
+          }}>
+            {/* First set of blog cards */}
+            {blogs.map((blog) => (
+              <div key={`first-${blog.id}`} className="flex-shrink-0 w-full max-w-4xl">
+                <div className="perspective-1000">
+                  <Card className="card-float bg-gradient-to-br from-card/60 via-card/40 to-card/60 backdrop-blur-xl border border-white/20 overflow-hidden group hover:shadow-2xl hover:shadow-primary/20 transform hover:rotateY-5 transition-all duration-700 preserve-3d">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 h-full">
+                      <div className="relative h-80 lg:h-96 overflow-hidden">
+                          <img
+                            src={blog.image}
+                            alt={blog.title}
+                            loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                          />
+                        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/50 to-transparent"></div>
+                        
+                        <div className="absolute top-4 left-4">
+                          <span className="px-3 py-1 text-xs font-semibold bg-gradient-to-r from-primary to-secondary text-white rounded-full">
+                            {blog.category}
+                          </span>
+                        </div>
+                        
+                        {blog.featured && (
+                          <div className="absolute top-4 right-4">
+                            <span className="px-3 py-1 text-xs font-semibold bg-gradient-to-r from-yellow-400 to-orange-400 text-white rounded-full animate-pulse">
+                              Featured
+                            </span>
+                          </div>
+                        )}
+                        
+                        <div className="absolute bottom-4 left-4 right-4">
+                          <div className="flex items-center justify-between text-white text-sm">
+                            <div className="flex items-center space-x-4">
+                              <div className="flex items-center">
+                                <User className="h-4 w-4 mr-1" />
+                                <span>{blog.author}</span>
+                              </div>
+                              <div className="flex items-center">
+                                <Calendar className="h-4 w-4 mr-1" />
+                                <span>{blog.date}</span>
+                              </div>
+                            </div>
+                            <div className="flex items-center">
+                              <Eye className="h-4 w-4 mr-1" />
+                              <span>{blog.views}</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="p-8 lg:p-12 flex flex-col justify-center relative">
+                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                        
+                        <h3 className="text-3xl lg:text-4xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors duration-300 leading-tight">
+                          {blog.title}
+                        </h3>
+                        
+                        <p className="text-muted-foreground mb-6 leading-relaxed text-lg line-clamp-3">
+                          {blog.excerpt}
+                        </p>
+                        
+                        <div className="flex items-center justify-between mb-6">
+                          <span className="text-sm text-primary font-medium">
+                            {blog.readTime}
+                          </span>
+                          <div className="flex space-x-2">
+                            <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                            <div className="w-2 h-2 bg-secondary rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+                            <div className="w-2 h-2 bg-primary rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+                          </div>
+                        </div>
+                        
+                        <button className="btn-3d group/btn flex items-center justify-center space-x-2 w-full py-4 text-lg font-semibold bg-gradient-to-r from-primary/20 to-secondary/20 hover:from-primary hover:to-secondary transform hover:scale-105 transition-all duration-300">
+                          <span>Read Article</span>
+                          <ArrowRight className="h-5 w-5 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                        </button>
+                      </div>
+                    </div>
+                  </Card>
+                </div>
+              </div>
+            ))}
+            {/* Duplicate set for seamless loop */}
+            {blogs.map((blog) => (
+              <div key={`second-${blog.id}`} className="flex-shrink-0 w-full max-w-4xl">
                   <div className="perspective-1000">
                     <Card className="card-float bg-gradient-to-br from-card/60 via-card/40 to-card/60 backdrop-blur-xl border border-white/20 overflow-hidden group hover:shadow-2xl hover:shadow-primary/20 transform hover:rotateY-5 transition-all duration-700 preserve-3d">
                       <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 h-full">
@@ -164,12 +246,9 @@ export const OurBlogs = () => {
                       </div>
                     </Card>
                   </div>
-                </CarouselItem>
+              </div>
               ))}
-            </CarouselContent>
-            <CarouselPrevious className="left-4 bg-gradient-to-r from-primary/20 to-secondary/20 border-white/20 hover:from-primary hover:to-secondary transform hover:scale-110 transition-all duration-300" />
-            <CarouselNext className="right-4 bg-gradient-to-r from-primary/20 to-secondary/20 border-white/20 hover:from-primary hover:to-secondary transform hover:scale-110 transition-all duration-300" />
-          </Carousel>
+          </div>
         </div>
       </div>
       

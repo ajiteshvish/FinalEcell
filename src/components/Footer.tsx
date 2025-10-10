@@ -1,9 +1,10 @@
-import { Sparkles, Mail, Phone, MapPin, Linkedin, Twitter, Instagram, Github } from 'lucide-react';
+import { Sparkles, Mail, Phone, MapPin, Linkedin, Twitter, Instagram, Github, MessageCircle } from 'lucide-react';
 
 export const Footer = () => {
   const socialLinks = [
     { icon: <Linkedin className="h-5 w-5" />, href: "https://www.linkedin.com/company/104391726/admin/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3Blrjv8BZBROGDSxNG2bZbIA%3D%3D", name: "LinkedIn" },
-    { icon: <Instagram className="h-5 w-5" />, href: "https://www.instagram.com/ecell_lncte?igsh=ODh2NWFhY2Z5aXNq", name: "Instagram" }
+    { icon: <Instagram className="h-5 w-5" />, href: "https://www.instagram.com/ecell_lncte?igsh=ODh2NWFhY2Z5aXNq", name: "Instagram" },
+    { icon: <MessageCircle className="h-5 w-5" />, href: "https://whatsapp.com/channel/0029VbAtadcL7UVQCGyyIn1a", name: "WhatsApp" }
   ];
 
 
@@ -55,7 +56,7 @@ export const Footer = () => {
               <div className="flex items-start justify-center lg:justify-start text-muted-foreground">
                 <MapPin className="h-4 w-4 mr-3 text-primary mt-1 flex-shrink-0" />
                 <span className="text-sm text-center lg:text-left">
-                  Lakshmi Narayan College of Technology Excellence, Raisen Road<br />
+                  Lakshmi Narain College of Technology Excellence, Raisen Road<br />
                   Bhopal, Madhya Pradesh - 462022
                 </span>
               </div>

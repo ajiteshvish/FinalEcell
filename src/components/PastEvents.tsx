@@ -72,67 +72,138 @@ export const PastEvents = () => {
           </p>
         </div>
 
-        <div className="relative max-w-5xl mx-auto">
-          <Carousel className="w-full" opts={{ align: 'start', loop: true }}>
-            <CarouselContent>
-              {pastEvents.map((event) => (
-                <CarouselItem key={event.id} className="basis-full">
-                  <Card className="card-float bg-gradient-to-br from-card/60 via-card/40 to-card/60 backdrop-blur-xl border border-white/20 overflow-hidden group">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                      <div className="relative h-80 lg:h-full overflow-hidden">
-                        <img
-                          src={event.image}
-                          alt={event.title}
-                          loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-background/80"></div>
-                      </div>
-                      
-                      <div className="p-8 lg:p-12 flex flex-col justify-center">
-                        <h3 className="text-3xl lg:text-4xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors duration-300">
-                          {event.title}
-                        </h3>
-                        
-                        <div className="space-y-3 mb-6 bg-gradient-to-r from-background/50 to-background/30 p-4 rounded-xl border border-white/10">
-                          <div className="flex items-center text-sm text-foreground">
-                            <Calendar className="h-4 w-4 mr-3 text-primary" />
-                            <span className="font-medium">{event.date}</span>
-                          </div>
-                          <div className="flex items-center text-sm text-foreground">
-                            <MapPin className="h-4 w-4 mr-3 text-primary" />
-                            <span className="font-medium">{event.location}</span>
-                          </div>
-                          <div className="flex items-center text-sm text-foreground">
-                            <Users className="h-4 w-4 mr-3 text-primary" />
-                            <span className="font-medium">{event.participants} Participants</span>
-                          </div>
-                        </div>
-                        
-                        <p className="text-muted-foreground mb-6 leading-relaxed text-lg">
-                          {event.description}
-                        </p>
-                        
-                        <div className="space-y-3">
-                          <div className="flex items-center text-primary font-semibold mb-2">
-                            <Award className="h-5 w-5 mr-2" />
-                            Key Achievements
-                          </div>
-                          {event.achievements.map((achievement, index) => (
-                            <div key={index} className="flex items-center text-sm text-foreground">
-                              <div className="w-2 h-2 bg-gradient-to-r from-primary to-secondary rounded-full mr-3"></div>
-                              <span>{achievement}</span>
-                            </div>
-                          ))}
-                        </div>
+        <div className="relative max-w-7xl mx-auto overflow-hidden">
+          <div className="flex animate-scroll space-x-4" style={{
+            animation: 'scroll 20s linear infinite',
+            width: 'calc(100% * 2)'
+          }}>
+            {/* First set of cards */}
+            {pastEvents.map((event) => (
+              <div key={`first-${event.id}`} className="flex-shrink-0 w-80">
+                <Card className="card-float bg-gradient-to-br from-card/60 via-card/40 to-card/60 backdrop-blur-xl border border-white/20 overflow-hidden group h-full">
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src={event.image}
+                      alt={event.title}
+                      loading="lazy" 
+                      decoding="async" 
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+                    <div className="absolute top-3 right-3">
+                      <div className="bg-primary/20 backdrop-blur-sm text-primary text-xs px-2 py-1 rounded-full border border-primary/30">
+                        {event.date}
                       </div>
                     </div>
-                  </Card>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="left-4 bg-gradient-to-r from-primary/20 to-secondary/20 border-white/20 hover:from-primary hover:to-secondary" />
-            <CarouselNext className="right-4 bg-gradient-to-r from-primary/20 to-secondary/20 border-white/20 hover:from-primary hover:to-secondary" />
-          </Carousel>
+                  </div>
+                  
+                  <div className="p-4 flex flex-col h-full">
+                    <h3 className="text-lg font-bold mb-3 text-foreground group-hover:text-primary transition-colors duration-300 line-clamp-2">
+                      {event.title}
+                    </h3>
+                    
+                    <div className="space-y-2 mb-4 bg-gradient-to-r from-background/50 to-background/30 p-3 rounded-lg border border-white/10">
+                      <div className="flex items-center text-xs text-foreground">
+                        <MapPin className="h-3 w-3 mr-2 text-primary flex-shrink-0" />
+                        <span className="font-medium truncate">{event.location}</span>
+                      </div>
+                      <div className="flex items-center text-xs text-foreground">
+                        <Users className="h-3 w-3 mr-2 text-primary flex-shrink-0" />
+                        <span className="font-medium">{event.participants} Participants</span>
+                      </div>
+                    </div>
+                    
+                    <p className="text-muted-foreground mb-4 leading-relaxed text-sm line-clamp-3 flex-grow">
+                      {event.description}
+                    </p>
+                    
+                    <div className="space-y-2 mt-auto">
+                      <div className="flex items-center text-primary font-semibold text-sm mb-2">
+                        <Award className="h-4 w-4 mr-2" />
+                        Key Achievements
+                      </div>
+                      <div className="space-y-1">
+                        {event.achievements.slice(0, 2).map((achievement, index) => (
+                          <div key={index} className="flex items-center text-xs text-foreground">
+                            <div className="w-1.5 h-1.5 bg-gradient-to-r from-primary to-secondary rounded-full mr-2 flex-shrink-0"></div>
+                            <span className="line-clamp-1">{achievement}</span>
+                          </div>
+                        ))}
+                        {event.achievements.length > 2 && (
+                          <div className="text-xs text-muted-foreground">
+                            +{event.achievements.length - 2} more achievements
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              </div>
+            ))}
+            {/* Duplicate set for seamless loop */}
+            {pastEvents.map((event) => (
+              <div key={`second-${event.id}`} className="flex-shrink-0 w-80">
+                <Card className="card-float bg-gradient-to-br from-card/60 via-card/40 to-card/60 backdrop-blur-xl border border-white/20 overflow-hidden group h-full">
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src={event.image}
+                      alt={event.title}
+                      loading="lazy" 
+                      decoding="async" 
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+                    <div className="absolute top-3 right-3">
+                      <div className="bg-primary/20 backdrop-blur-sm text-primary text-xs px-2 py-1 rounded-full border border-primary/30">
+                        {event.date}
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="p-4 flex flex-col h-full">
+                    <h3 className="text-lg font-bold mb-3 text-foreground group-hover:text-primary transition-colors duration-300 line-clamp-2">
+                      {event.title}
+                    </h3>
+                    
+                    <div className="space-y-2 mb-4 bg-gradient-to-r from-background/50 to-background/30 p-3 rounded-lg border border-white/10">
+                      <div className="flex items-center text-xs text-foreground">
+                        <MapPin className="h-3 w-3 mr-2 text-primary flex-shrink-0" />
+                        <span className="font-medium truncate">{event.location}</span>
+                      </div>
+                      <div className="flex items-center text-xs text-foreground">
+                        <Users className="h-3 w-3 mr-2 text-primary flex-shrink-0" />
+                        <span className="font-medium">{event.participants} Participants</span>
+                      </div>
+                    </div>
+                    
+                    <p className="text-muted-foreground mb-4 leading-relaxed text-sm line-clamp-3 flex-grow">
+                      {event.description}
+                    </p>
+                    
+                    <div className="space-y-2 mt-auto">
+                      <div className="flex items-center text-primary font-semibold text-sm mb-2">
+                        <Award className="h-4 w-4 mr-2" />
+                        Key Achievements
+                      </div>
+                      <div className="space-y-1">
+                        {event.achievements.slice(0, 2).map((achievement, index) => (
+                          <div key={index} className="flex items-center text-xs text-foreground">
+                            <div className="w-1.5 h-1.5 bg-gradient-to-r from-primary to-secondary rounded-full mr-2 flex-shrink-0"></div>
+                            <span className="line-clamp-1">{achievement}</span>
+                          </div>
+                        ))}
+                        {event.achievements.length > 2 && (
+                          <div className="text-xs text-muted-foreground">
+                            +{event.achievements.length - 2} more achievements
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
