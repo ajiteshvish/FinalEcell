@@ -6,10 +6,10 @@ import { Users, Calendar, Trophy, Building, ArrowRight, Star } from 'lucide-reac
 const ESummit = () => {
   // Stats data
   const stats = [
-    { icon: <Users className="h-8 w-8" />, value: "50K+", label: "FEST REACH" },
+    { icon: <Users className="h-8 w-8" />, value: "100K+", label: "FEST REACH" },
     { icon: <Calendar className="h-8 w-8" />, value: "5K+", label: "ATTENDEES" },
     { icon: <Trophy className="h-8 w-8" />, value: "2K+", label: "REGISTRATIONS" },
-    { icon: <Building className="h-8 w-8" />, value: "100+", label: "CAMPUS STRENGTH" }
+    { icon: <Building className="h-8 w-8" />, value: "5K+", label: "CAMPUS STRENGTH" }
   ];
 
   // Sample speakers data (you can replace with actual data)
