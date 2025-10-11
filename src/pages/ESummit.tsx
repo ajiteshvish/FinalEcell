@@ -34,14 +34,38 @@ const ESummit = () => {
     }
   ];
 
-  // Sample event images (you can replace with actual event images)
+  // Event images with their corresponding unstop links
   const eventImages = [
-    { src: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=300&fit=crop", title: "Startup Pitch Competition" },
-    { src: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop", title: "Innovation Workshop" },
-    { src: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=400&h=300&fit=crop", title: "Networking Session" },
-    { src: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop", title: "Panel Discussion" },
-    { src: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400&h=300&fit=crop", title: "Tech Talk" },
-    { src: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=300&fit=crop", title: "Awards Ceremony" }
+    { 
+      src: "assets/events_img/1-1.png", 
+      title: "IPL AUCTION",
+      link: "https://unstop.com/o/oMY7ASz?lb=zOFjqrfz&utm_medium=Share&utm_source=Creat-fly&utm_campaign=Competitions"
+    },
+    { 
+      src: "assets/events_img/2-1.png", 
+      title: "CASE CRACKERS",
+      link: "https://unstop.com/o/mualq1g?lb=zOFjqrfz&utm_medium=Share&utm_source=Creat-fly&utm_campaign=Competitions"
+    },
+    { 
+      src: "assets/events_img/3-1.png", 
+      title: "THE STOCK SPRINT",
+      link: "https://unstop.com/o/X8Dhmze?lb=zOFjqrfz&utm_medium=Share&utm_source=Creat-fly&utm_campaign=Competitions"
+    },
+    { 
+      src: "assets/events_img/4-1.png", 
+      title: "VERBAL COMBAT",
+      link: "https://unstop.com/o/6lmskb8?lb=zOFjqrfz&utm_medium=Share&utm_source=Creat-fly&utm_campaign=Competitions"
+    },
+    { 
+      src: "assets/events_img/5.png", 
+      title: "PITCH PERFECT",
+      link: "https://unstop.com/o/fG30MLD?lb=zOFjqrfz&utm_medium=Share&utm_source=Creat-fly&utm_campaign=Competitions"
+    },
+    { 
+      src: "assets/events_img/6.png", 
+      title: "BIZZAP!",
+      link: "https://unstop.com/o/WndZI5P?lb=zOFjqrfz&utm_medium=Share&utm_source=Creat-fly&utm_campaign=Competitions"
+    }
   ];
 
   return (
@@ -181,8 +205,8 @@ const ESummit = () => {
                   key={index}
                   className="group cursor-pointer relative overflow-hidden rounded-2xl card-glass hover:scale-105 transition-all duration-500"
                   onClick={() => {
-                    // You can add specific event details or modal here
-                    console.log(`Clicked ${event.title}`);
+                    // Redirect to the unstop link for the event
+                    window.open(event.link, '_blank');
                   }}
                 >
                   <div className="aspect-[4/3] overflow-hidden">
@@ -190,6 +214,13 @@ const ESummit = () => {
                       src={event.src} 
                       alt={event.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      onError={(e) => {
+                        console.error(`Failed to load image: ${event.src}`);
+                        e.currentTarget.src = '/placeholder.svg';
+                      }}
+                      onLoad={() => {
+                        console.log(`Successfully loaded image: ${event.src}`);
+                      }}
                     />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -198,7 +229,7 @@ const ESummit = () => {
                         {event.title}
                       </h3>
                       <p className="text-white/80 text-sm">
-                        Click to learn more about this exciting event
+                        {/* blank for now  */}
                       </p>
                     </div>
                   </div>
