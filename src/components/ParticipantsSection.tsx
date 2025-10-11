@@ -1,6 +1,7 @@
 import { Card } from './ui/card';
 import { Badge } from './ui/badge';
 import { ExternalLink, Award, Briefcase } from 'lucide-react';
+import { createImageProps } from '../utils/imageUtils';
 
 export const ParticipantsSection = () => {
   // Placeholder participants data - you can replace with actual data
@@ -89,8 +90,7 @@ export const ParticipantsSection = () => {
             >
               <div className="relative">
                 <img
-                  src={participant.image}
-                  alt={participant.name}
+                  {...createImageProps(participant.image, participant.name, '/placeholder.svg')}
                   className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>

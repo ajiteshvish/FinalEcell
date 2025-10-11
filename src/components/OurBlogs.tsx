@@ -99,6 +99,13 @@ export const OurBlogs = () => {
                             src={blog.image}
                             alt={blog.title}
                             loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            onError={(e) => {
+                              console.error(`Failed to load blog image: ${blog.image}`);
+                              e.currentTarget.src = '/placeholder.svg';
+                            }}
+                            onLoad={() => {
+                              console.log(`Successfully loaded blog image: ${blog.image}`);
+                            }}
                           />
                         <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/50 to-transparent"></div>
                         

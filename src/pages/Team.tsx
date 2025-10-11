@@ -287,6 +287,13 @@ const Team = () => {
             src={p.image || '/placeholder.svg'}
             alt={p.name}
             className={`mx-auto object-cover rounded-full border-4 border-primary/20 group-hover:border-primary/40 transition-colors duration-300 ${isHead ? 'w-36 h-36' : 'w-32 h-32'}`}
+            onError={(e) => {
+              console.error(`Failed to load team image: ${p.image}`);
+              e.currentTarget.src = '/placeholder.svg';
+            }}
+            onLoad={() => {
+              console.log(`Successfully loaded team image: ${p.image}`);
+            }}
           />
           {/* Contact Icons - Show on hover */}
           {(p.email || p.linkedin) && (

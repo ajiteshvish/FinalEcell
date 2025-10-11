@@ -61,6 +61,13 @@ export const OurInitiatives = () => {
                   src={item.image}
                   alt={item.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  onError={(e) => {
+                    console.error(`Failed to load initiative image: ${item.image}`);
+                    e.currentTarget.src = '/placeholder.svg';
+                  }}
+                  onLoad={() => {
+                    console.log(`Successfully loaded initiative image: ${item.image}`);
+                  }}
                 />
               </div>
               <div className="p-6">
