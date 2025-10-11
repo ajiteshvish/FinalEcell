@@ -29,7 +29,7 @@ const Team = () => {
         id: 'president', 
         name: 'Sarvesh Kumar', 
         role: 'President & Lead', 
-        image: '/assets/team/hero-bg.jpg',
+        image: '/team/hero-bg.jpg',
         email: 'sarvesh.kumar@ecell.com',
         linkedin: 'https://linkedin.com/in/sarvesh-kumar'
       }
@@ -52,7 +52,7 @@ const Team = () => {
         id: 'sec', 
         name: 'Shivam Mudgal', 
         role: 'Secretary', 
-        image: '/assets/team/20250830_111558_0000 - Shivam Mudgal.png',
+        image: '/team/20250830_111558_0000 - Shivam Mudgal.png',
         email: 'shivam.mudgal@ecell.com',
         linkedin: 'https://linkedin.com/in/shivam-mudgal'
       }
@@ -64,7 +64,7 @@ const Team = () => {
         id: 'treasurer', 
         name: 'Adarsh Patidar', 
         role: 'Treasurer', 
-        image: '/assets/team/IMG-20231109-WA0026 - Adarsh Patidar.jpg',
+        image: '/team/IMG-20231109-WA0026 - Adarsh Patidar.jpg',
         email: 'adarsh.patidar@ecell.com',
         linkedin: 'https://linkedin.com/in/adarsh-patidar'
       }
@@ -76,7 +76,7 @@ const Team = () => {
         id: 'sm-head', 
         name: 'Pooja Singh', 
         role: 'Social Media Head', 
-        image: '/assets/team/Screenshot_20250830-224455_Gallery - POOJA_ SINGH 10C.jpg',
+        image: '/team/Screenshot_20250830-224455_Gallery - POOJA_ SINGH 10C.jpg',
         email: 'pooja.singh@ecell.com',
         linkedin: 'https://linkedin.com/in/pooja-singh'
       },
@@ -85,7 +85,7 @@ const Team = () => {
           id: 'sm-1', 
           name: 'Tanishka Shrivastava', 
           role: 'Graphic Designer', 
-          image: '/assets/team/IMG20250709192629 - Tanishka Shrivastava.jpg',
+          image: '/team/IMG20250709192629 - Tanishka Shrivastava.jpg',
           email: 'tanishka.shrivastava@ecell.com',
           linkedin: 'https://linkedin.com/in/tanishka-shrivastava'
         },
@@ -93,7 +93,7 @@ const Team = () => {
           id: 'sm-2', 
           name: 'Khushi Jain', 
           role: 'Graphic Designer', 
-          image: '/assets/team/20250709_215825 - khushi jain.jpg',
+          image: '/team/20250709_215825 - khushi jain.jpg',
           email: 'khushi.jain@ecell.com',
           linkedin: 'https://linkedin.com/in/khushi-jain'
         },
@@ -101,7 +101,7 @@ const Team = () => {
           id: 'sm-3', 
           name: 'Pushpendra Verma', 
           role: 'Video Editor', 
-          image: '/assets/team/IMG_20250902_202245 - Satyam Verman.jpg',
+          image: '/team/IMG_20250902_202245 - Satyam Verman.jpg',
           email: 'pushpendra.verma@ecell.com',
           linkedin: 'https://linkedin.com/in/pushpendra-verma'
         }
@@ -115,7 +115,7 @@ const Team = () => {
           id: 'tech-1', 
           name: 'Ajitesh Vishwakarma', 
           role: 'Technical Team', 
-          image: '/assets/team/IMG_20250607_141840.jpg',
+          image: '/team/IMG_20250607_141840.jpg',
           email: 'ajitesh.vishwakarma@ecell.com',
           linkedin: 'https://linkedin.com/in/ajitesh-vishwakarma'
         },
@@ -123,7 +123,7 @@ const Team = () => {
           id: 'tech-2', 
           name: 'Shourya Gupta', 
           role: 'Technical Team', 
-          image: '/assets/team/WhatsApp Image 2025-04-26 at 13.01.33_ee20a3cb - Shourya Gupta.jpg',
+          image: '/team/WhatsApp Image 2025-04-26 at 13.01.33_ee20a3cb - Shourya Gupta.jpg',
           email: 'shourya.gupta@ecell.com',
           linkedin: 'https://linkedin.com/in/shourya-gupta'
         }
@@ -137,7 +137,7 @@ const Team = () => {
           id: 'pr-1', 
           name: 'Khushi Soni', 
           role: 'Outreach & PR Team', 
-          image: '/assets/team/IMG-20250709-WA0065 - Khushi Soni.jpg',
+          image: '/team/IMG-20250709-WA0065 - Khushi Soni.jpg',
           email: 'khushi.soni@ecell.com',
           linkedin: 'https://linkedin.com/in/khushi-soni'
         },
@@ -158,7 +158,7 @@ const Team = () => {
           id: 'exec-1', 
           name: 'Ashish Sahu', 
           role: 'Executive', 
-          image: '/assets/team/1 - Ashish Sahu.png',
+          image: '/team/1 - Ashish Sahu.png',
           email: 'ashish.sahu@ecell.com',
           linkedin: 'https://linkedin.com/in/ashish-sahu'
         },
@@ -166,7 +166,7 @@ const Team = () => {
           id: 'exec-2', 
           name: 'Harsh Gupta', 
           role: 'Executive', 
-          image: '/assets/team/IMG20250815164131 - Harsh Gupta.jpg',
+          image: '/team/IMG20250815164131 - Harsh Gupta.jpg',
           email: 'harsh.gupta@ecell.com',
           linkedin: 'https://linkedin.com/in/harsh-gupta'
         }
@@ -207,7 +207,7 @@ const Team = () => {
           id: 'mkt-1', 
           name: 'Bhagyashree', 
           role: 'Marketing Team', 
-          image: '/assets/team/Camera-1231719718 - Mishu.jpg',
+          image: '/team/Camera-1231719718 - Mishu.jpg',
           email: 'bhagyashree@ecell.com',
           linkedin: 'https://linkedin.com/in/bhagyashree'
         },
@@ -215,7 +215,7 @@ const Team = () => {
           id: 'mkt-2', 
           name: 'Neha Sethiya', 
           role: 'Marketing Team', 
-          image: '/assets/team/20250709_234552 - Neha Sethiya.jpg',
+          image: '/team/20250709_234552 - Neha Sethiya.jpg',
           email: 'neha.sethiya@ecell.com',
           linkedin: 'https://linkedin.com/in/neha-sethiya'
         }
@@ -228,7 +228,7 @@ const Team = () => {
         id: 'content-head', 
         name: 'Shreya Shukla', 
         role: 'Content Creator Head', 
-        image: '/assets/team/IMG_20250709_221727 - Shreya.jpg',
+        image: '/team/IMG_20250709_221727 - Shreya.jpg',
         email: 'shreya.shukla@ecell.com',
         linkedin: 'https://linkedin.com/in/shreya-shukla'
       },
@@ -256,7 +256,7 @@ const Team = () => {
         id: 'ops-head', 
         name: 'Nishtha Deshmukh', 
         role: 'Operation & Sponsorship Head', 
-        image: '/assets/team/IMG_20241228_194931_113 - Nishtha Deshmukh.jpg',
+        image: '/team/IMG_20241228_194931_113 - Nishtha Deshmukh.jpg',
         email: 'nishtha.deshmukh@ecell.com',
         linkedin: 'https://linkedin.com/in/nishtha-deshmukh'
       },

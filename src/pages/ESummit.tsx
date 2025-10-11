@@ -37,32 +37,32 @@ const ESummit = () => {
   // Event images with their corresponding unstop links
   const eventImages = [
     { 
-      src: "assets/events_img/1-1.png", 
+      src: "/events_img/1-1.png", 
       title: "IPL AUCTION",
       link: "https://unstop.com/o/oMY7ASz?lb=zOFjqrfz&utm_medium=Share&utm_source=Creat-fly&utm_campaign=Competitions"
     },
     { 
-      src: "assets/events_img/2-1.png", 
+      src: "/events_img/2-1.png", 
       title: "CASE CRACKERS",
       link: "https://unstop.com/o/mualq1g?lb=zOFjqrfz&utm_medium=Share&utm_source=Creat-fly&utm_campaign=Competitions"
     },
     { 
-      src: "assets/events_img/3-1.png", 
+      src: "/events_img/3-1.png", 
       title: "THE STOCK SPRINT",
       link: "https://unstop.com/o/X8Dhmze?lb=zOFjqrfz&utm_medium=Share&utm_source=Creat-fly&utm_campaign=Competitions"
     },
     { 
-      src: "assets/events_img/4-1.png", 
+      src: "/events_img/4-1.png", 
       title: "VERBAL COMBAT",
       link: "https://unstop.com/o/6lmskb8?lb=zOFjqrfz&utm_medium=Share&utm_source=Creat-fly&utm_campaign=Competitions"
     },
     { 
-      src: "assets/events_img/5.png", 
+      src: "/events_img/5.png", 
       title: "PITCH PERFECT",
       link: "https://unstop.com/o/fG30MLD?lb=zOFjqrfz&utm_medium=Share&utm_source=Creat-fly&utm_campaign=Competitions"
     },
     { 
-      src: "assets/events_img/6.png", 
+      src: "/events_img/6.png", 
       title: "BIZZAP!",
       link: "https://unstop.com/o/WndZI5P?lb=zOFjqrfz&utm_medium=Share&utm_source=Creat-fly&utm_campaign=Competitions"
     }

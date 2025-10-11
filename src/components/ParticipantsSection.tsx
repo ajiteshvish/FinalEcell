@@ -11,7 +11,7 @@ export const ParticipantsSection = () => {
       role: "Founder & CEO",
       company: "TechVenture Solutions",
       year: "2019-2020",
-      image: "/api/placeholder/300/300",
+      image: "/placeholder.svg",
       achievement: "Raised ₹2M in Series A",
       tags: ["Tech", "AI/ML", "SaaS"]
     },
@@ -21,7 +21,7 @@ export const ParticipantsSection = () => {
       role: "Co-Founder",
       company: "EcoGreen Innovations",
       year: "2020-2021",
-      image: "/api/placeholder/300/300",
+      image: "/placeholder.svg",
       achievement: "50k+ customers across India",
       tags: ["Sustainability", "B2C", "E-commerce"]
     },
@@ -31,7 +31,7 @@ export const ParticipantsSection = () => {
       role: "Product Manager",
       company: "Google",
       year: "2018-2019",
-      image: "/api/placeholder/300/300",
+      image: "/placeholder.svg",
       achievement: "Led product team of 50+",
       tags: ["Product", "BigTech", "Management"]
     },
@@ -41,7 +41,7 @@ export const ParticipantsSection = () => {
       role: "Investment Analyst",
       company: "Sequoia Capital",
       year: "2021-2022",
-      image: "/api/placeholder/300/300",
+      image: "/placeholder.svg",
       achievement: "Invested in 15+ startups",
       tags: ["VC", "Investment", "Fintech"]
     },
@@ -51,7 +51,7 @@ export const ParticipantsSection = () => {
       role: "Founder",
       company: "HealthTech Plus",
       year: "2019-2020",
-      image: "/api/placeholder/300/300",
+      image: "/placeholder.svg",
       achievement: "Impacted 1M+ lives",
       tags: ["HealthTech", "B2B", "Impact"]
     },
@@ -61,7 +61,7 @@ export const ParticipantsSection = () => {
       role: "Lead Designer",
       company: "Figma",
       year: "2020-2021",
-      image: "/api/placeholder/300/300",
+      image: "/placeholder.svg",
       achievement: "Design System architect",
       tags: ["Design", "UX", "Product"]
     }
